@@ -111,6 +111,78 @@
   color: black;
 }
 
+/* Toggle button */
+.menu-toggle {
+  display: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile Menu (accordion style) */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  margin-top: 10px;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(40px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+/* Open state */
+.mobile-menu.open {
+  max-height: 300px;
+  padding: 20px 0;
+  opacity: 1;
+}
+
+/* Links inside mobile menu */
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.mobile-menu a:hover {
+  color: white;
+}
+
+/* Mobile connect button */
+.mobile-connect {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 999px;
+}
+
+/* Mobile behavior */
+@media (max-width: 768px) {
+  .navbar-links,
+  .connect-btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
 @media (min-width: 768px) {
   .connect-btn {
     padding: 0.5rem 1rem; /* md:py-2 md:px-4 */
